@@ -1,0 +1,45 @@
+{
+	"common": {
+		"appName": "Your app",
+		"allRightsReserved": "All rights reserved",
+		"english": "English",
+		"french": "Français",
+		"lightMode": "Light Mode",
+		"darkMode": "Dark Mode",
+		"termsOfService": "Terms of Service",
+		"privacyPolicy": "Privacy Policy",
+		"contact":  "Contact",
+		"confirm": "Confirm",
+		"cancel": "Cancel",
+		"error": "An error occurred",
+		"save": "Save"
+	},
+	"home": {
+		"title": "Home"
+	},
+	"account": {
+		"title": "Account",
+		"profile": "Profile",
+		"changePassword": "Change password",
+		"currentPassword": "Current password",
+		"newPassword": "New password",
+		"deleteAccount": "Delete my account",
+		"confirmDelete": "Are you sure you want to delete your account? This action cannot be undone.",
+		"accountUpdated": "Account updated successfully",
+		"noChanges": "No changes made"
+	},
+	"auth": {
+		"login": "Login",
+		"register": "Register",
+		"logout": "Logout",
+		"email": "Email",
+		"password": "Password",
+		"confirmPassword": "Confirm Password",
+		"name": "Name",
+		"alreadyHaveAccount": "Already have an account?",
+		"dontHaveAccount": "Don't have an account?",
+		"invalidCredentials": "Invalid email or password",
+		"invalidEmail":  "Invalid email",
+		"passwordTooShort": "Password must be at least 6 characters"
+	}
+}

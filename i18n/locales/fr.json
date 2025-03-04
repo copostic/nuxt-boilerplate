@@ -1,0 +1,45 @@
+{
+	"common": {
+		"appName": "Votre application",
+		"allRightsReserved": "Tous droits réservés",
+		"english": "English",
+		"french": "Français",
+		"lightMode": "Mode clair",
+		"darkMode": "Mode sombre",
+		"termsOfService": "Conditions d'utilisation",
+		"privacyPolicy": "Politique de confidentialité",
+		"contact":  "Contact",
+		"confirm": "Confirmer",
+		"cancel": "Annuler",
+		"error": "Une erreur est survenue",
+		"save": "Sauvegarder"
+	},
+	"home": {
+		"title": "Accueil"
+	},
+	"account": {
+		"title": "Mon compte",
+		"profile": "Profil",
+		"changePassword": "Changer de mot de passe",
+		"currentPassword": "Mot de passe actuel",
+		"newPassword": "Nouveau mot de passe",
+		"deleteAccount": "Supprimer mon compte",
+		"confirmDelete": "Si vous êtes sûr de supprimer votre compte, veuillez cliquer sur le bouton ci-dessous",
+		"accountUpdated": "Votre profil a été mis à jour",
+		"noChanges": "Aucun changement effectué"
+	},
+	"auth": {
+		"login": "Connexion",
+		"register": "Inscription",
+		"logout": "Déconnexion",
+		"email": "Email",
+		"password": "Mot de passe",
+		"confirmPassword": "Confirmer le mot de passe",
+		"name": "Nom",
+		"alreadyHaveAccount": "Vous avez déjà un compte ?",
+		"dontHaveAccount": "Vous n'avez pas de compte ?",
+		"invalidCredentials": "Email ou mot de passe invalide",
+		"invalidEmail":  "Email invalide",
+		"passwordTooShort": "Votre mot de passe doit faire au moins 6 caractères"
+	}
+}
