@@ -8,18 +8,18 @@ export default defineI18nConfig(() => ({
   fallbackLocale: 'en',
   messages: {
     en,
-    fr
+    fr,
   },
   numberFormats: {
     en: {
       currency: {
-        style: 'currency'
-      }
+        style: 'currency',
+      },
     },
     fr: {
       currency: {
-        style: 'currency'
-      }
-    }
-  }
+        style: 'currency',
+      },
+    },
+  },
 }));

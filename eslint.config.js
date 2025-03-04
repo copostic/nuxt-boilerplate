@@ -1,12 +1,13 @@
-import { createConfigForNuxt } from '@nuxt/eslint-config/flat'
+import { createConfigForNuxt } from '@nuxt/eslint-config/flat';
 
 export default createConfigForNuxt({
   features: {
     stylistic: {
-      semi: false,
-      indent: 2, // 4 or 'tab'
+      semi: true,
+      indent: 2,
       quotes: 'single',
-      // ... and more
-    }
-  }
-})
+      commaDangle: 'always-multiline',
+    },
+
+  },
+});

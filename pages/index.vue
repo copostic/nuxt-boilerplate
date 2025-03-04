@@ -7,14 +7,16 @@
         >
           {{ t("common.appName") }}
         </h1>
-    </div>
+      </div>
     </div>
   </div>
 </template>
+
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
 const { status } = useAuth();
-const isAuthenticated = computed(() => status.value === "authenticated");
+const isAuthenticated = computed(() => status.value === 'authenticated');
+console.log(isAuthenticated);
 </script>
