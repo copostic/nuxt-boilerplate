@@ -7,8 +7,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "prisma generate && nuxt prepare",
-    "migrate": "prisma migrate dev --name init"
+    "postinstall": "nuxt prepare"
   },
   "dependencies": {
     "nuxt": "^3.15.4",
@@ -16,13 +15,12 @@
     "vue-router": "^4.5.0",
     "@nuxt/ui": "^2.21.0",
     "@nuxtjs/i18n": "^9.2.1",
-    "@prisma/nuxt": "^0.3.0",
     "@pinia/nuxt": "^0.10.1",
     "@sidebase/nuxt-auth": "^0.10.0",
+    "@supabase/supabase-js": "^2.39.7",
     "bcryptjs": "^3.0.2",
     "next-auth": "4.21.1",
     "pinia": "^3.0.1",
-    "prisma": "^6.4.1",
     "zod": "^3.24.2"
   },
   "devDependencies": {

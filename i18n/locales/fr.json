@@ -8,7 +8,7 @@
 		"darkMode": "Mode sombre",
 		"termsOfService": "Conditions d'utilisation",
 		"privacyPolicy": "Politique de confidentialité",
-		"contact":  "Contact",
+		"contact": "Contact",
 		"confirm": "Confirmer",
 		"cancel": "Annuler",
 		"error": "Une erreur est survenue",
@@ -39,7 +39,7 @@
 		"alreadyHaveAccount": "Vous avez déjà un compte ?",
 		"dontHaveAccount": "Vous n'avez pas de compte ?",
 		"invalidCredentials": "Email ou mot de passe invalide",
-		"invalidEmail":  "Email invalide",
+		"invalidEmail": "Email invalide",
 		"passwordTooShort": "Votre mot de passe doit faire au moins 6 caractères"
 	}
 }

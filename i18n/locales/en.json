@@ -8,7 +8,7 @@
 		"darkMode": "Dark Mode",
 		"termsOfService": "Terms of Service",
 		"privacyPolicy": "Privacy Policy",
-		"contact":  "Contact",
+		"contact": "Contact",
 		"confirm": "Confirm",
 		"cancel": "Cancel",
 		"error": "An error occurred",
@@ -39,7 +39,7 @@
 		"alreadyHaveAccount": "Already have an account?",
 		"dontHaveAccount": "Don't have an account?",
 		"invalidCredentials": "Invalid email or password",
-		"invalidEmail":  "Invalid email",
+		"invalidEmail": "Invalid email",
 		"passwordTooShort": "Password must be at least 6 characters"
 	}
 }

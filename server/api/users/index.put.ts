@@ -1,7 +1,11 @@
-import bcrypt from 'bcryptjs';
 import { z } from 'zod';
-import prisma from '~/lib/prisma';
+import supabase from '~/server/utils/supabase';
 import { getServerSession } from '#auth';
+
+const userUpdateSchema = z.object({
+  name: z.string().min(1).max(100).optional(),
+  email: z.string().email().optional(),
+});
 
 export default defineEventHandler(async (event) => {
   const session = await getServerSession(event);
@@ -12,43 +16,47 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  const body = await readBody(event);
-
-  const schema = z.object({
-    name: z.string().min(2).optional(),
-    password: z.string().min(8).optional(),
-  });
-
   try {
-    schema.parse(body);
+    const body = await readBody(event);
+    const validatedData = userUpdateSchema.parse(body);
+
+    // Update user in Supabase
+    const { data: user, error } = await supabase
+      .from('users')
+      .update({
+        ...validatedData,
+        updated_at: new Date().toISOString(),
+      })
+      .eq('id', session.user.id)
+      .select('id, email, name, created_at, updated_at')
+      .single();
+
+    if (error) {
+      return createError({
+        statusCode: 400,
+        message: error.message,
+      });
+    }
+
+    return {
+      id: user.id,
+      email: user.email,
+      name: user.name,
+      createdAt: user.created_at,
+      updatedAt: user.updated_at,
+    };
   }
   catch (error) {
+    if (error instanceof z.ZodError) {
+      return createError({
+        statusCode: 400,
+        message: error.errors.map(e => e.message).join(', '),
+      });
+    }
+
     return createError({
-      statusCode: 400,
-      message: error.message || 'Invalid input data',
+      statusCode: 500,
+      message: 'An error occurred while updating the user',
     });
   }
-
-  const updateData: { name?: string; password?: string } = {};
-
-  if (body.name) {
-    updateData.name = body.name;
-  }
-
-  if (body.password) {
-    updateData.password = await bcrypt.hash(body.password, 10);
-  }
-
-  console.log(session);
-  return prisma.user.update({
-    where: { id: session.user.id },
-    data: updateData,
-    select: {
-      id: true,
-      email: true,
-      name: true,
-      createdAt: true,
-      updatedAt: true,
-    },
-  });
 });

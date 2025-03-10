@@ -1,4 +1,4 @@
-import prisma from '~/lib/prisma';
+import supabase from '~/server/utils/supabase';
 import { getServerSession } from '#auth';
 
 export default defineEventHandler(async (event) => {
@@ -10,9 +10,17 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  await prisma.user.delete({
-    where: { id: session.user.id },
-  });
+  const { error } = await supabase
+    .from('users')
+    .delete()
+    .eq('id', session.user.id);
+
+  if (error) {
+    return createError({
+      statusCode: 500,
+      message: error.message,
+    });
+  }
 
   return { success: true };
 });

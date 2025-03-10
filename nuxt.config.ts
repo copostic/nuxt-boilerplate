@@ -5,7 +5,6 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/i18n',
     '@sidebase/nuxt-auth',
-    '@prisma/nuxt',
     '@nuxt/eslint-config',
   ],
   devtools: { enabled: false },
@@ -13,6 +12,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     private: {
       AUTH_SECRET: process.env.AUTH_SECRET,
+      SUPABASE_URL: process.env.SUPABASE_URL,
+      SUPABASE_KEY: process.env.SUPABASE_KEY,
     },
   },
   compatibilityDate: '2025-03-03',

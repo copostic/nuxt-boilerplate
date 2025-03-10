@@ -1,4 +1,4 @@
-import prisma from '~/lib/prisma';
+import supabase from '~/server/utils/supabase';
 import { getServerSession } from '#auth';
 
 export default defineEventHandler(async (event) => {
@@ -10,23 +10,24 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  const user = await prisma.user.findUnique({
-    where: { id: session.user.id },
-    select: {
-      id: true,
-      email: true,
-      name: true,
-      createdAt: true,
-      updatedAt: true,
-    },
-  });
+  const { data: user, error } = await supabase
+    .from('users')
+    .select('id, email, name, created_at, updated_at')
+    .eq('id', session.user.id)
+    .single();
 
-  if (!user) {
+  if (error || !user) {
     return createError({
       statusCode: 404,
       message: 'User not found',
     });
   }
 
-  return user;
+  return {
+    id: user.id,
+    email: user.email,
+    name: user.name,
+    createdAt: user.created_at,
+    updatedAt: user.updated_at,
+  };
 });
